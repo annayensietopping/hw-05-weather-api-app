@@ -1,0 +1,25 @@
+
+
+#currentTemp {
+background-color: pink;
+opacity: 50%;
+padding: 4em;
+}
+
+body {
+  text-align: center;
+}
+
+form {
+  background-color: gray;
+  padding: 2em;
+  color: white;
+}
+
+#submit {
+  background-color: white;
+}
+
+#title {
+font-size: 4em;
+}

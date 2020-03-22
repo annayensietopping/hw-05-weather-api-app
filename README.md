@@ -16,6 +16,8 @@ For this lab you'll be using the Open Weather Data API. In order to use it, plea
 
 2. Once you've signed up, you're given an [API key](https://home.openweathermap.org/api_keys). Copy that API key and keep track of it somewhere!
 
+(22739fd08a1d57e67d1caccfc1edf8f9)
+
 3. Go to [OpenWeatherMap](http://openweathermap.org/api) and scroll down, you'll see a section that says "API Documentation."
 
 4. Open Insomnia to check out the data you're working with and to verify that your api key works. Make a GET request to the following URL in Insomnia, adding your API key to the end.

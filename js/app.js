@@ -81,9 +81,41 @@ let lowTemp = Math.round(kToF(response.main.temp_min))
 have a nice day :)`)
 
 turnBlue(mainTemp)
+searchGif(response.weather[0].main)
 }
-
-
 // end update html
+
+// Giphy
+
+function searchGif(query) {
+    const giphyUrl = "https://api.giphy.com/v1/gifs/search"
+    const apiKey = "HRuknNTOGG0i1qVagcgOpKaxQz2OTAop"
+
+      // making API request using AJAX
+    $.ajax({
+      url: giphyUrl,
+      type: "GET",
+      data: { api_key: apiKey, q: query }
+    })
+    .done((response) => {
+      // execute this function if request is successful
+      console.log(response.data)
+
+      // pass array of gifs as a parameter from API tp displayResults() function
+      // function is defined below outside of this event
+      displayResults(response.data)
+    })
+    .fail(() => {
+      // execute this function if request fails
+      alert('error occurred')
+    })
+  }
+// end search function
+
+// display results function
+function displayResults(response) {
+      $('#weatherGif').html(`<img src="${response[0].images.original.url}"/>`)
+  }
+//
 
 })

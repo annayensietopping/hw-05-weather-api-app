@@ -46,9 +46,22 @@ updateHtml(response)
 //   console.log(result)
 // }
 
+//
 function kToF(input) {
   var k = parseInt(input);
   return (k - 273.15) * 9 / 5 + 32;
+}
+//
+
+//
+function turnBlue(input) {
+  if(input < 40) {
+  $('#mainTempColor').css('color','blue')
+} else if(input > 85) {
+  $('#mainTempColor').css('color','red')
+} else {
+  console.log('not under 40 or over 85')
+}
 }
 
 // update html
@@ -61,11 +74,13 @@ let highTemp = Math.round(kToF(response.main.temp_max))
 let lowTemp = Math.round(kToF(response.main.temp_min))
 
   $('#currentTemp').html(`your current city is: ${response['name']}<br>
-  the temperature is: ${Math.round(mainTemp)}°F<br>
+  the temperature is:<span id='mainTempColor'> ${Math.round(mainTemp)}°F </span> <br>
   forecast: ${response.weather[0].main}<br>
   high: ${highTemp}°F<br>
   low: ${lowTemp}°F<br> <br>
 have a nice day :)`)
+
+turnBlue(mainTemp)
 }
 
 
